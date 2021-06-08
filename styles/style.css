@@ -1,0 +1,37 @@
+html, body {
+    padding: 0px;
+    margin: 0px;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+body {
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+}
+header {    
+    width: 100%;
+    background-color: rgb(242, 242, 242);
+    display: grid;
+    justify-items: end;
+} 
+nav {
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    grid-template-columns: auto;
+    grid-template-rows: min-content min-content;
+    align-self: center;
+}
+nav form {
+    display: grid;
+    grid-template-rows: min-content min-content;
+    justify-items: center;
+}
+
+footer {
+    width: 100%;
+    background-color: rgb(242, 242, 242);
+    display: grid;
+    grid-template-columns: 1fr auto;
+}
