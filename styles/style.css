@@ -1,5 +1,12 @@
-body {
+html {
     height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    grid-area: body;
     display: grid;
     grid-template-rows: 1fr 15fr 1fr;
     grid-template-areas: 
@@ -50,10 +57,11 @@ nav {
     grid-area: form;
     display: grid;
     grid-template-rows: 1fr 10fr;
-    grid-template-columns: 25fr 1fr 25fr;
+    grid-template-columns: 1fr 1fr;
     grid-template-areas: 
-    "bar bar bar"
-    "button1 . button2";
+    "bar bar"
+    "button1 button2";
+    column-gap: 15px;
 }
 .search-bar {
     grid-area: bar;
@@ -82,6 +90,7 @@ footer {
 #first-block {
     grid-area: first-block;
     justify-self: start;
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(4, auto) max-content;
     grid-template-areas: "about advertising business search .";
@@ -90,6 +99,7 @@ footer {
 #second-block {
     grid-area: second-block;
     justify-self: end;
+    align-items: center;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-areas: "privacy terms settings";
