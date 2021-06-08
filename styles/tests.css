@@ -13,7 +13,7 @@ header {
     grid-area: header;
     width: 100%;
     display: grid;
-    grid-template-columns: 25fr repeat(4, auto);
+    grid-template-columns: 25fr 1fr 1fr 1fr 1fr;
     align-items: center;
     grid-template-areas: ". header-item-1 header-item-2 apps user";
     column-gap: 20px;
@@ -83,15 +83,15 @@ footer {
     grid-area: first-block;
     justify-self: start;
     display: grid;
-    grid-template-columns: repeat(4, auto) max-content;
+    grid-template-columns: repeat(4, 1fr) 15fr;
     grid-template-areas: "about advertising business search .";
     column-gap: 20px;
 }
 #second-block {
     grid-area: second-block;
     justify-self: end;
-    display: grid;
-    grid-template-columns: repeat(3, auto);
+    display:    grid;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "privacy terms settings";
     column-gap: 20px;
 }
