@@ -1,14 +1,9 @@
-html {
-    height: 100vh;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
 body {
-    height: 100%;
+    height: 100vh;
+    box-sizing: border-box;
     grid-area: body;
     display: grid;
-    grid-template-rows: 1fr 15fr 1fr;
+    grid-template-rows: auto max-content auto;
     grid-template-areas: 
     "header"
     "nav"
@@ -16,34 +11,54 @@ body {
 }
 
 
-header {
+nav {
     grid-area: header;
     width: 100%;
     display: grid;
     grid-template-columns: 25fr repeat(4, auto);
     align-items: center;
+    justify-items: center;
     grid-template-areas: ". header-item-1 header-item-2 apps user";
     column-gap: 20px;
+    color: rgba(0, 0, 0, 0.87);
+    font-family: Arial, sans-serif;
+    font-size: 13px;
 }   
-.header-item1 {
+.nav-item1 {
     grid-area: header-item-1;
+    color: inherit;
+    text-decoration: none;
+    line-height: 24px;
 }
-.header-item2 {
+.nav-item2 {
     grid-area: header-item-2;
+    color: inherit;
+    text-decoration: none;
+    line-height: 24px;
+}
+.nav-item1:hover, .nav-item2:hover {
+    text-decoration: underline;
 }
 .apps {
     grid-area: apps;
+    width: 50%;
 }
 .user {
     grid-area: user;
+    width: 80%;
+}
+.apps:hover, .user:hover{
+    background-color: rgba(0,0,0,.15);
+    border-radius: 50%; 
 }
 
 
-nav {
+main {
     grid-area: nav;
     width: 100%;
     display: grid;
     grid-template-rows: 1fr 2fr;
+    row-gap: 20px;
     grid-template-areas: 
     "image"
     "form";
@@ -61,36 +76,69 @@ nav {
     grid-template-areas: 
     "bar bar"
     "button1 button2";
-    column-gap: 15px;
+    column-gap: 10px;
+    row-gap: 20px;
 }
-.search-bar {
+.search-bar { 
+    background-image: url('../images/search.png');
+    background-position: left 2% bottom 50%;
+    background-repeat: no-repeat;
+    background-size: 23px;
+    padding-left: 40px;
     grid-area: bar;
     justify-self: center;
     align-self: start;
+    border: 1px solid #dfe1e5;
+    border-radius: 24px;
+    height: 44px;
+    width: 30%;
+}
+.search-bar:hover, .search-bar:focus {
+    outline: none;
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
 }
 #button1 {
     grid-area: button1;
     justify-self: end;
-    align-self: start;
 }
 #button2 {
     grid-area: button2;
     justify-self: start;
-    align-self: start;
+}
+#button1, #button2 {
+    align-self: start 5%;
+    background-color: #f8f9fa;
+    border: 1px solid #f8f9fa;
+    border-radius: 4px;
+    color: #3c4043;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+}
+#button1:hover, #button2:hover {
+    border: 1px solid #dadce0;
+    box-shadow: 0 1px 1px rgba(0,0,0,.1);
 }
 
 
 footer {
     grid-area: footer;
     width: 100%;
+    border-top: 1px solid #dadce0;
     display: grid;
-    grid-template-columns: 25fr auto;
+    grid-template-columns: max-content auto;
     grid-template-areas: "first-block second-block";
+    background-color: rgb(242, 242, 242);
 }
 #first-block {
     grid-area: first-block;
     justify-self: start;
     align-items: center;
+    justify-items: center;
     display: grid;
     grid-template-columns: repeat(4, auto) max-content;
     grid-template-areas: "about advertising business search .";
@@ -100,8 +148,19 @@ footer {
     grid-area: second-block;
     justify-self: end;
     align-items: center;
+    justify-items: center;
     display: grid;
     grid-template-columns: repeat(3, auto);
     grid-template-areas: "privacy terms settings";
     column-gap: 20px;
+}
+.footer-item {
+    color: rgb(112, 117, 122);
+    text-decoration: none;
+    font-family: arial, sans-serif;
+    font-size: 14px;
+    padding: 15px;
+}
+.footer-item:hover {
+    text-decoration: underline;
 }
