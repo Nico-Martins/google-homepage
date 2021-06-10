@@ -1,3 +1,0 @@
--Make the page not scroll
--Equate background shade in the apps' and user's icons
--Make the apps and search images gray
